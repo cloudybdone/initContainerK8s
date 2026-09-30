@@ -414,27 +414,3 @@ Where:
 
 ---
 
-# Conclusion
-
-Init Containers provide a controlled initialization phase inside a Kubernetes Pod.
-
-Instead of making the main application container responsible for every setup operation, initialization tasks can be handled separately and completed before the application starts.
-
-In this lab, the pattern is simple:
-
-```text
-Init Container
-      |
-      | Prepare content
-      v
-Shared emptyDir Volume
-      |
-      v
-NGINX Container
-      |
-      | Serve content
-      v
-hello world
-```
-
-The same initialization concept can be used for configuration preparation, dependency checks, file generation, and other setup operations that need to happen before the main application starts.
